@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Demo Websites — Algarve</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --line: #334155;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --accent: #f59e0b;
+      --accent-text: #1e1402;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      padding: 2.5rem 1.25rem 4rem;
+    }
+    .wrap { max-width: 760px; margin: 0 auto; }
+    header { margin-bottom: 2rem; }
+    h1 { font-size: 1.7rem; margin: 0 0 .5rem; }
+    .sub { color: var(--muted); margin: 0; }
+    ul { list-style: none; margin: 2rem 0 0; padding: 0; display: grid; gap: .85rem; }
+    a.card {
+      display: block;
+      text-decoration: none;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1rem 1.15rem;
+      color: var(--text);
+      transition: border-color .15s, transform .15s;
+    }
+    a.card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .name { font-weight: 600; font-size: 1.08rem; }
+    .meta { color: var(--muted); font-size: .9rem; margin-top: .15rem; }
+    .note {
+      margin-top: 2.5rem;
+      padding: 1rem 1.15rem;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+    .note strong { color: var(--text); }
+    footer { margin-top: 2.5rem; color: var(--muted); font-size: .8rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>Demo Websites — Algarve</h1>
+      <p class="sub">Bilingual (PT/EN) preview sites built for local businesses. Each link opens that business's demo.</p>
+    </header>
+
+    <ul>
+      <li><a class="card" href="estacao/">
+        <div class="name">Centro Veterinário da Estação</div>
+        <div class="meta">Veterinary clinic · Faro</div>
+      </a></li>
+      <li><a class="card" href="sos/">
+        <div class="name">Clínica Veterinária SOS Pequeno Animal</div>
+        <div class="meta">Veterinary clinic · Loulé</div>
+      </a></li>
+      <li><a class="card" href="tavira/">
+        <div class="name">Clínica Veterinária de Tavira (CVT)</div>
+        <div class="meta">Veterinary clinic · Tavira</div>
+      </a></li>
+      <li><a class="card" href="guia/">
+        <div class="name">Clínica Veterinária da Guia</div>
+        <div class="meta">Veterinary clinic · Albufeira</div>
+      </a></li>
+      <li><a class="card" href="rr-advogados/">
+        <div class="name">RR Advogados</div>
+        <div class="meta">Law firm · Faro</div>
+      </a></li>
+    </ul>
+
+    <div class="note">
+      <strong>These are previews, not finished paid products.</strong> They use placeholder
+      and publicly-listed business information and may hot-link images from third-party CDNs.
+      Each business's contact details are publicly listed.
+    </div>
+
+    <footer>Portugal Web Agency · demo deployment</footer>
+  </div>
+</body>
+</html>

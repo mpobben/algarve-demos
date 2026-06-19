@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-PT" data-lang="pt">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- ===========================================================
+     DEMO — RR ADVOGADOS (Faro)
+     BILINGUE PT/EN (a firma é também ES — pode acrescentar-se).
+     PITCH: upgrade — o site atual é um template Squarespace fino,
+     sem profundidade e com email genérico @outlook.com. Esta versão
+     dá imagem profissional + email de domínio próprio.
+     Dados reais: nome, morada, telefone, áreas de prática, idiomas.
+     ⚠️ COMPLIANCE (Ordem dos Advogados / EOA): conteúdo sóbrio e
+     factual — sem promessas de resultado, sem "o melhor", sem
+     testemunhos de casos, sem taxas de sucesso. Apenas informação.
+     ⚠️ Não inventar nomes/credenciais de advogados (não públicos).
+     RGPD: formulário pede nome + contacto + assunto; avisa para NÃO
+     enviar dados confidenciais do caso pelo formulário.
+     =========================================================== -->
+<title>RR Advogados — Faro | Law Firm in Faro, Algarve</title>
+<meta name="description" content="RR Advogados, sociedade de advogados em Faro. Direito imobiliário, estrangeiros e imigração, comercial, família e sucessões. PT / EN / ES." />
+<style>
+  :root{
+    --brand:#1c2c3a;        /* navy sóbrio */
+    --brand-dark:#11202c;
+    --accent:#b08d57;       /* dourado discreto */
+    --ink:#1a232b;
+    --muted:#5c6670;
+    --bg:#f6f7f8;
+    --card:#ffffff;
+    --radius:10px;
+    --shadow:0 6px 24px rgba(0,0,0,.08);
+    --maxw:1080px;
+    --serif:Georgia,"Times New Roman",serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65}
+  img{max-width:100%;display:block}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+  .btn{display:inline-block;padding:14px 28px;border-radius:4px;font-weight:700;text-decoration:none;transition:.2s;cursor:pointer;border:none;font-size:1rem;letter-spacing:.3px}
+  .btn-primary{background:var(--accent);color:#1a1206}
+  .btn-primary:hover{background:#9a7a47}
+  .btn-ghost{background:transparent;color:#fff;border:1.5px solid #fff}
+  .btn-ghost:hover{background:#fff;color:var(--brand)}
+
+  [data-pt],[data-en]{display:none}
+  html[data-lang="pt"] [data-pt]{display:revert}
+  html[data-lang="en"] [data-en]{display:revert}
+
+  header.nav{position:sticky;top:0;z-index:50;background:var(--brand);border-bottom:2px solid var(--accent)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;max-width:var(--maxw);margin:0 auto;gap:16px}
+  .logo{font-family:var(--serif);font-weight:700;font-size:1.25rem;color:#fff;letter-spacing:1px}
+  .logo span{color:var(--accent)}
+  .nav-links{display:flex;gap:22px;align-items:center}
+  .nav-links a{text-decoration:none;font-weight:600;color:#dde3e9;font-size:.95rem}
+  .nav-links a:hover{color:var(--accent)}
+  .lang{display:flex;gap:6px;align-items:center}
+  .lang button{border:1px solid var(--accent);background:transparent;color:var(--accent);border-radius:3px;padding:5px 10px;font-weight:700;cursor:pointer;font-size:.82rem}
+  .lang button.active{background:var(--accent);color:#1a1206}
+  @media(max-width:860px){.nav-links a:not(.btn){display:none}}
+
+  .hero{position:relative;min-height:70vh;display:flex;align-items:center;color:#fff;
+    background:linear-gradient(rgba(15,28,40,.78),rgba(15,28,40,.82)),
+    url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=1600&q=80') center/cover}
+  .hero .wrap{padding:60px 20px}
+  .hero .eyebrow{letter-spacing:3px;text-transform:uppercase;font-size:.78rem;color:var(--accent);font-weight:700;margin-bottom:16px}
+  .hero h1{font-family:var(--serif);font-size:clamp(2.1rem,5vw,3.4rem);line-height:1.15;margin-bottom:16px;max-width:760px}
+  .hero p{font-size:1.15rem;max-width:620px;margin:0 0 28px;opacity:.95}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+
+  section{padding:70px 0}
+  .section-title{margin-bottom:14px;font-size:1.9rem;color:var(--brand);font-family:var(--serif)}
+  .section-sub{color:var(--muted);max-width:660px;margin-bottom:40px}
+  .center{text-align:center}
+  .center .section-sub{margin-left:auto;margin-right:auto}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:820px){.grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.grid{grid-template-columns:1fr}}
+  .area{background:var(--card);border:1px solid #e6e9ec;border-left:3px solid var(--accent);border-radius:var(--radius);padding:20px}
+  .area h3{color:var(--brand);font-size:1.02rem;margin-bottom:4px}
+  .area p{color:var(--muted);font-size:.88rem}
+
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+  @media(max-width:860px){.split{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid #e6e9ec;border-radius:var(--radius);box-shadow:var(--shadow);padding:30px}
+  form label{display:block;font-weight:600;margin:14px 0 6px;font-size:.95rem}
+  form input,form select,form textarea{width:100%;padding:12px;border:1px solid #ccd2d8;border-radius:6px;font-size:1rem;font-family:inherit}
+  .consent{font-size:.8rem;color:var(--muted);margin-top:12px;display:flex;gap:8px;align-items:flex-start}
+  .consent input{width:auto;margin-top:4px}
+  .info-row{display:flex;gap:12px;align-items:flex-start;margin-bottom:16px}
+  .info-row .ico{color:var(--accent);font-weight:700}
+  .map{border:0;width:100%;height:240px;border-radius:var(--radius);margin-top:10px}
+  .langs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+  .langs span{background:#fff;border:1px solid #e6e9ec;border-radius:999px;padding:8px 18px;font-weight:600;color:var(--brand)}
+  .note{background:#fbf7ef;border:1px solid #e7d8b8;color:#6e5526;border-radius:8px;padding:10px 14px;font-size:.82rem}
+
+  footer{background:var(--brand-dark);color:#aebccb;padding:42px 0;font-size:.9rem}
+  footer a{color:var(--accent);text-decoration:none}
+  .foot-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px}
+  .legal{margin-top:24px;color:#6f8092;font-size:.78rem;text-align:center;line-height:1.5}
+
+  .float{position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;gap:12px;z-index:60}
+  .float a{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow);text-decoration:none;font-size:1.4rem;color:#fff}
+  .fab-call{background:var(--accent);color:#1a1206}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="logo">RR <span>ADVOGADOS</span></div>
+    <nav class="nav-links">
+      <a href="#areas"><span data-pt>Áreas de Prática</span><span data-en>Practice Areas</span></a>
+      <a href="#firma"><span data-pt>A Sociedade</span><span data-en>The Firm</span></a>
+      <a href="#contacto"><span data-pt>Contacto</span><span data-en>Contact</span></a>
+      <a class="btn btn-primary" href="#contacto"><span data-pt>Pedir consulta</span><span data-en>Request a consultation</span></a>
+    </nav>
+    <div class="lang">
+      <button id="bt-pt" class="active" onclick="setLang('pt')">PT</button>
+      <button id="bt-en" onclick="setLang('en')">EN</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Faro · Algarve · Portugal</div>
+    <h1><span data-pt>Aconselhamento jurídico para residentes e investidores estrangeiros</span><span data-en>Legal counsel for foreign residents and investors</span></h1>
+    <p>
+      <span data-pt>Sociedade de advogados em Faro, com prática em direito imobiliário, estrangeiros e imigração, comercial e sucessões. Atendimento em português, inglês e espanhol.</span>
+      <span data-en>A law firm in Faro practising in real estate, foreigners & immigration, commercial and succession law. We assist clients in Portuguese, English and Spanish.</span>
+    </p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="#contacto"><span data-pt>Pedir consulta</span><span data-en>Request a consultation</span></a>
+      <a class="btn btn-ghost" href="#areas"><span data-pt>Áreas de prática</span><span data-en>Practice areas</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- PRACTICE AREAS -->
+<section id="areas">
+  <div class="wrap">
+    <h2 class="section-title"><span data-pt>Áreas de Prática</span><span data-en>Practice Areas</span></h2>
+    <p class="section-sub"><span data-pt>Apoiamos clientes nacionais e estrangeiros num conjunto alargado de matérias jurídicas.</span><span data-en>We assist national and foreign clients across a broad range of legal matters.</span></p>
+    <div class="grid">
+      <div class="area"><h3><span data-pt>Direito Imobiliário</span><span data-en>Real Estate Law</span></h3><p><span data-pt>Compra, venda e arrendamento de imóveis.</span><span data-en>Property purchase, sale and leasing.</span></p></div>
+      <div class="area"><h3><span data-pt>Estrangeiros & Imigração</span><span data-en>Foreigners & Immigration</span></h3><p><span data-pt>Residência, vistos e regularização.</span><span data-en>Residency, visas and regularisation.</span></p></div>
+      <div class="area"><h3><span data-pt>Alojamento Local</span><span data-en>Short-term Rentals</span></h3><p><span data-pt>Licenciamento e enquadramento legal.</span><span data-en>Licensing and legal framework.</span></p></div>
+      <div class="area"><h3><span data-pt>Comercial & Societário</span><span data-en>Commercial & Corporate</span></h3><p><span data-pt>Constituição de empresas e contratos.</span><span data-en>Company formation and contracts.</span></p></div>
+      <div class="area"><h3><span data-pt>Família & Sucessões</span><span data-en>Family & Succession</span></h3><p><span data-pt>Heranças, partilhas e direito da família.</span><span data-en>Inheritance, estates and family law.</span></p></div>
+      <div class="area"><h3><span data-pt>Direito Fiscal</span><span data-en>Tax Law</span></h3><p><span data-pt>Enquadramento fiscal de residentes e investidores.</span><span data-en>Tax matters for residents and investors.</span></p></div>
+      <div class="area"><h3><span data-pt>Direito Civil</span><span data-en>Civil Law</span></h3><p><span data-pt>Obrigações, contratos e responsabilidade.</span><span data-en>Obligations, contracts and liability.</span></p></div>
+      <div class="area"><h3><span data-pt>Direito Laboral</span><span data-en>Labour Law</span></h3><p><span data-pt>Relações de trabalho e contencioso laboral.</span><span data-en>Employment relations and disputes.</span></p></div>
+      <div class="area"><h3><span data-pt>Insolvência & Recuperação</span><span data-en>Insolvency & Recovery</span></h3><p><span data-pt>Recuperação de empresas e insolvências.</span><span data-en>Business recovery and insolvency.</span></p></div>
+    </div>
+    <p class="section-sub" style="margin-top:18px;font-size:.9rem"><span data-pt>Entre outras áreas. Indique-nos o seu assunto e informaremos se podemos ajudar.</span><span data-en>Among other areas. Tell us your matter and we will let you know whether we can assist.</span></p>
+  </div>
+</section>
+
+<!-- THE FIRM -->
+<section id="firma" style="background:#eef0f2">
+  <div class="wrap center" style="max-width:780px">
+    <h2 class="section-title"><span data-pt>A Sociedade</span><span data-en>The Firm</span></h2>
+    <p class="section-sub">
+      <span data-pt>A RR Advogados é uma sociedade sediada em Faro, ao serviço de particulares e empresas no Algarve. Acompanhamos clientes estrangeiros em todo o processo de investimento e residência em Portugal, com atendimento multilingue e proximidade.</span>
+      <span data-en>RR Advogados is a law firm based in Faro, serving individuals and businesses across the Algarve. We support foreign clients throughout the process of investing in and relocating to Portugal, with multilingual, personal attention.</span>
+    </p>
+    <div class="langs">
+      <span>🇵🇹 Português</span><span>🇬🇧 English</span><span>🇪🇸 Español</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contacto">
+  <div class="wrap">
+    <h2 class="section-title"><span data-pt>Pedir Consulta</span><span data-en>Request a Consultation</span></h2>
+    <p class="section-sub"><span data-pt>Deixe os seus dados e o assunto. Entraremos em contacto para agendar.</span><span data-en>Leave your details and the subject of your matter. We will contact you to arrange a meeting.</span></p>
+    <div class="split">
+      <div class="card">
+        <form onsubmit="event.preventDefault();alert('Demonstração — na versão final liga ao email do escritório. / Demo only.');">
+          <label><span data-pt>Nome</span><span data-en>Name</span></label>
+          <input type="text" required />
+          <label><span data-pt>Email</span><span data-en>Email</span></label>
+          <input type="email" required />
+          <label><span data-pt>Telefone</span><span data-en>Phone</span></label>
+          <input type="tel" placeholder="+351 / +44 / +34 ..." />
+          <label><span data-pt>Área / assunto</span><span data-en>Area / subject</span></label>
+          <select>
+            <option data-pt>Direito imobiliário</option><option data-en>Real estate</option>
+            <option data-pt>Estrangeiros / imigração</option><option data-en>Foreigners / immigration</option>
+            <option data-pt>Alojamento local</option><option data-en>Short-term rentals</option>
+            <option data-pt>Comercial / societário</option><option data-en>Commercial / corporate</option>
+            <option data-pt>Família / sucessões</option><option data-en>Family / succession</option>
+            <option data-pt>Outro</option><option data-en>Other</option>
+          </select>
+          <label><span data-pt>Mensagem (breve)</span><span data-en>Message (brief)</span></label>
+          <textarea rows="3" placeholder=""></textarea>
+          <label class="consent"><input type="checkbox" required />
+            <span data-pt>Autorizo o contacto. Por favor, não envie documentos ou detalhes confidenciais do caso por este formulário — apenas em reunião. (RGPD)</span>
+            <span data-en>I consent to being contacted. Please do not send confidential documents or case details via this form — only in a meeting. (GDPR)</span>
+          </label>
+          <button class="btn btn-primary" style="margin-top:16px;width:100%" type="submit"><span data-pt>Enviar pedido</span><span data-en>Send request</span></button>
+        </form>
+      </div>
+      <div>
+        <div class="info-row"><span class="ico">▸</span><div><strong><span data-pt>Morada</span><span data-en>Address</span></strong><br>Largo de São Luís, 11C, 4.º Esq.<br>8000-143 Faro, Algarve</div></div>
+        <div class="info-row"><span class="ico">▸</span><div><strong><span data-pt>Telefone</span><span data-en>Phone</span></strong><br><a href="tel:+351939063415">939 063 415</a></div></div>
+        <div class="info-row"><span class="ico">▸</span><div><strong>Fax</strong><br>289 832 629</div></div>
+        <div class="info-row"><span class="ico">▸</span><div><strong>Email</strong><br><span data-pt>[email de domínio próprio — ex. geral@rradvogados.pt]</span><span data-en>[firm-domain email — e.g. geral@rradvogados.pt]</span></div></div>
+        <iframe class="map" loading="lazy" src="https://www.google.com/maps?q=Largo+de+S%C3%A3o+Lu%C3%ADs+11+Faro&output=embed"></iframe>
+        <p class="note" style="margin-top:14px">ℹ️ <span data-pt>Demonstração — sugere-se substituir o email genérico (@outlook.com) por um email de domínio próprio (@rradvogados.pt) para maior credibilidade.</span><span data-en>Demo — we suggest replacing the generic (@outlook.com) email with a firm-domain address (@rradvogados.pt) for greater credibility.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <div class="logo" style="color:#fff">RR <span style="color:var(--accent)">ADVOGADOS</span></div>
+      <p style="margin-top:8px">Largo de São Luís, 11C, 4.º Esq.<br>8000-143 Faro, Algarve</p>
+    </div>
+    <div>
+      <strong><span data-pt>Contacto</span><span data-en>Contact</span></strong><br>
+      <a href="tel:+351939063415">939 063 415</a><br>
+      <span data-pt>PT · EN · ES</span><span data-en>PT · EN · ES</span>
+    </div>
+  </div>
+  <div class="legal wrap">
+    © <span id="year"></span> RR Advogados · Faro. ·
+    <a href="#"><span data-pt>Política de Privacidade (RGPD)</span><span data-en>Privacy Policy (GDPR)</span></a><br>
+    <span data-pt>Esta página tem caráter meramente informativo e não constitui publicidade comparativa nem aconselhamento jurídico. Demonstração criada por</span><span data-en>This page is for information only and does not constitute comparative advertising or legal advice. Demo created by</span> [O Seu Nome].
+  </div>
+</footer>
+
+<div class="float">
+  <a class="fab-call" href="tel:+351939063415" title="Ligar / Call">📞</a>
+</div>
+
+<script>
+  function setLang(l){
+    document.documentElement.setAttribute('data-lang', l);
+    document.documentElement.setAttribute('lang', l === 'pt' ? 'pt-PT' : 'en');
+    document.getElementById('bt-pt').classList.toggle('active', l==='pt');
+    document.getElementById('bt-en').classList.toggle('active', l==='en');
+    // Show only the active language's <select> options. CSS display on <option>
+    // is unreliable in some browsers (e.g. older Safari), so enforce it here.
+    document.querySelectorAll('select').forEach(function(sel){
+      var firstVisible = null;
+      sel.querySelectorAll('option[data-pt],option[data-en]').forEach(function(o){
+        var show = o.hasAttribute(l === 'pt' ? 'data-pt' : 'data-en');
+        o.hidden = !show; o.disabled = !show; o.style.display = show ? '' : 'none';
+        if(show && !firstVisible) firstVisible = o;
+      });
+      if(firstVisible && (!sel.selectedOptions.length || sel.selectedOptions[0].hidden)){
+        firstVisible.selected = true;
+      }
+    });
+  }
+  document.getElementById('year').textContent = new Date().getFullYear();
+  setLang('pt'); // apply initial language state (including <select> options)
+</script>
+</body>
+</html>
