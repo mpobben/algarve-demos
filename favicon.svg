@@ -1,0 +1,5 @@
+<svg viewBox="0 0 60 56" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Praça Studio">
+  <rect width="60" height="56" rx="10" fill="#F4EFE6"/>
+  <path d="M18 46 L18 26 A12 12 0 0 1 42 26 L42 46" fill="none" stroke="#B4543A" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="30" cy="11" r="2.5" fill="#B4543A"/>
+</svg>

@@ -4,93 +4,73 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
-  <title>Demo Websites — Algarve</title>
+  <title>Praça Studio — Demos</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <style>
-    :root {
-      --bg: #0f172a;
-      --card: #1e293b;
-      --line: #334155;
-      --text: #e2e8f0;
-      --muted: #94a3b8;
-      --accent: #f59e0b;
-      --accent-text: #1e1402;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.55;
-      padding: 2.5rem 1.25rem 4rem;
-    }
-    .wrap { max-width: 760px; margin: 0 auto; }
-    header { margin-bottom: 2rem; }
-    h1 { font-size: 1.7rem; margin: 0 0 .5rem; }
-    .sub { color: var(--muted); margin: 0; }
-    ul { list-style: none; margin: 2rem 0 0; padding: 0; display: grid; gap: .85rem; }
-    a.card {
-      display: block;
-      text-decoration: none;
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 1rem 1.15rem;
-      color: var(--text);
-      transition: border-color .15s, transform .15s;
-    }
-    a.card:hover { border-color: var(--accent); transform: translateY(-2px); }
-    .name { font-weight: 600; font-size: 1.08rem; }
-    .meta { color: var(--muted); font-size: .9rem; margin-top: .15rem; }
-    .note {
-      margin-top: 2.5rem;
-      padding: 1rem 1.15rem;
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      color: var(--muted);
-      font-size: .85rem;
-    }
-    .note strong { color: var(--text); }
-    footer { margin-top: 2.5rem; color: var(--muted); font-size: .8rem; }
+    :root{ --bg:#F4EFE6; --card:#fff; --line:#E2D8C8; --ink:#1C1C1A; --muted:#6B6256; --accent:#B4543A; }
+    *{ box-sizing:border-box; }
+    body{ margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--ink); line-height:1.6; padding:3rem 1.25rem 4rem; }
+    .wrap{ max-width:760px; margin:0 auto; }
+    .brand{ text-align:center; }
+    .brand svg{ height:104px; width:auto; }
+    .tag{ text-align:center; color:var(--ink); font-style:italic; font-family:Georgia,"Times New Roman",serif; margin:.3rem 0 .35rem; font-size:1.1rem; }
+    .tag-en{ text-align:center; color:var(--muted); font-size:.72rem; letter-spacing:2px; text-transform:uppercase; margin:0 0 2.4rem; }
+    h2{ font-family:Georgia,serif; font-weight:500; font-size:1.1rem; margin:0 0 1rem; }
+    ul{ list-style:none; margin:0; padding:0; display:grid; gap:.85rem; }
+    a.card{ display:block; text-decoration:none; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:1rem 1.15rem; color:var(--ink); transition:border-color .15s, transform .15s, box-shadow .15s; }
+    a.card:hover{ border-color:var(--accent); transform:translateY(-2px); box-shadow:0 6px 20px rgba(28,28,26,.08); }
+    .name{ font-weight:600; font-size:1.05rem; }
+    .meta{ color:var(--muted); font-size:.9rem; margin-top:.15rem; }
+    .note{ margin-top:2.5rem; padding:1rem 1.15rem; background:var(--card); border:1px solid var(--line); border-radius:12px; color:var(--muted); font-size:.85rem; }
+    .note strong{ color:var(--ink); }
+    footer{ margin-top:2.5rem; text-align:center; color:var(--muted); font-size:.8rem; }
+    footer .a{ color:var(--accent); }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <header>
-      <h1>Demo Websites — Algarve</h1>
-      <p class="sub">Bilingual (PT/EN) preview sites built for local businesses. Each link opens that business's demo.</p>
-    </header>
+    <div class="brand">
+      <svg viewBox="0 0 300 146" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Praça Studio">
+        <path d="M128 56 L128 30 A22 22 0 0 1 172 30 L172 56" fill="none" stroke="#B4543A" stroke-width="6" stroke-linecap="round"/>
+        <circle cx="150" cy="14" r="3" fill="#B4543A"/>
+        <text x="150" y="108" text-anchor="middle" font-family="Georgia,'Times New Roman',serif" font-size="46" fill="#1C1C1A">Praça</text>
+        <text x="150" y="132" text-anchor="middle" font-family="Georgia,serif" font-size="13" letter-spacing="7" fill="#6B6256">STUDIO</text>
+      </svg>
+    </div>
+    <p class="tag">“A sua presença, no centro.”</p>
+    <p class="tag-en">Where local business goes online</p>
 
+    <h2>Demonstrações · Demos</h2>
     <ul>
       <li><a class="card" href="estacao/">
         <div class="name">Centro Veterinário da Estação</div>
-        <div class="meta">Veterinary clinic · Faro</div>
+        <div class="meta">Clínica veterinária · Faro</div>
       </a></li>
       <li><a class="card" href="sos/">
         <div class="name">Clínica Veterinária SOS Pequeno Animal</div>
-        <div class="meta">Veterinary clinic · Loulé</div>
+        <div class="meta">Clínica veterinária · Loulé</div>
       </a></li>
       <li><a class="card" href="tavira/">
         <div class="name">Clínica Veterinária de Tavira (CVT)</div>
-        <div class="meta">Veterinary clinic · Tavira</div>
+        <div class="meta">Clínica veterinária · Tavira</div>
       </a></li>
       <li><a class="card" href="guia/">
         <div class="name">Clínica Veterinária da Guia</div>
-        <div class="meta">Veterinary clinic · Albufeira</div>
+        <div class="meta">Clínica veterinária · Albufeira</div>
       </a></li>
       <li><a class="card" href="rr-advogados/">
         <div class="name">RR Advogados</div>
-        <div class="meta">Law firm · Faro</div>
+        <div class="meta">Sociedade de advogados · Faro</div>
       </a></li>
     </ul>
 
     <div class="note">
-      <strong>These are previews, not finished paid products.</strong> They use placeholder
-      and publicly-listed business information and may hot-link images from third-party CDNs.
-      Each business's contact details are publicly listed.
+      <strong>Demonstrações / previews</strong> — não são produtos finais pagos. Usam informação de empresa
+      publicamente disponível e podem carregar imagens de terceiros (CDN). · These are previews, not finished
+      paid products; they use publicly-listed business information.
     </div>
 
-    <footer>Portugal Web Agency · demo deployment</footer>
+    <footer>© 2026 <span class="a">Praça Studio</span> · Algarve · <em>A sua presença, no centro.</em></footer>
   </div>
 </body>
 </html>
